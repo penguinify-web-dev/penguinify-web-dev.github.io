@@ -91,6 +91,11 @@
         </div>
 
         <script>
+
+            input.files = ['gays/nintendogs-best-friends.zip']
+
+
+
             input.onchange = async () => {
                 const url = new Blob([input.files[0]])
                 const parts = input.files[0].name.split(".")
@@ -192,6 +197,9 @@
             }
             box.ondragover = () => box.setAttribute("drag", true);
             box.ondragleave = () => box.removeAttribute("drag");
+
+            const myw = new Event("onchange")
+            input.dispatchEvent(myw)
         </script>
     </body>
 </html>
